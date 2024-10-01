@@ -76,23 +76,6 @@ void AddUser(Node*& head, User user) {
 
 
 void addElBegin(Node*& head, User user) {
-
-	/*if (head == nullptr) {
-		Node* temp2 = new Node;
-		head = temp2;
-		InitList(head, user);
-		return;
-	}
-	Node* temp = head;
-	Node* beginEl = new Node;
-	temp->prev = beginEl;
-	beginEl->user = user;
-	beginEl->next = temp;
-	head = beginEl;
-	head->prev = nullptr;*/
-
-
-
 	Node* beginEl = new Node;
 	beginEl->user = user;
 	beginEl->next = head;
@@ -138,8 +121,7 @@ void removeHead(Node*& head) {
 	if (head)
 	{
 		head->prev = nullptr;
-	}
-	
+	}	
 }
 
 
@@ -148,9 +130,8 @@ void removeList(Node*& head) {
 		cout << "Список пустой" << endl;
 		return;
 	}
-	Node* temp = head;
-	while (temp != nullptr) {
-		removeHead(temp);
+	while (head != nullptr) {
+		removeHead(head);
 	}
 	
 }
